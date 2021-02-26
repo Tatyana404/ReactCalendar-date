@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import style from './calendar.module.scss'
 import DayOfTheWeekAndDayOfTheMonth from './dayOfTheWeekAndDayOfTheMonth'
-import RightSideOfTheCalendar from './rightSideOfTheCalendar'
+import MonthAndYearAndCalendar from './monthAndYearAndCalendar'
 
 export default class Calendar extends Component {
   static defaultProps = {
@@ -38,7 +38,7 @@ export default class Calendar extends Component {
         <DayOfTheWeekAndDayOfTheMonth
           fullNameOfTheDayOfTheWeek={fullNameOfTheDayOfTheWeek}
         />
-        <RightSideOfTheCalendar
+        <MonthAndYearAndCalendar
           abbreviationNameOfTheDayOfTheWeek={abbreviationNameOfTheDayOfTheWeek}
           currentDate={currentDate}
         />
