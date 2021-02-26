@@ -1,9 +1,9 @@
 import { Component } from "react";
-import style from "./leftSideOfTheCalendar.module.scss";
+import style from "./dayOfTheWeekAndDayOfTheMonth.module.scss";
 import WeekDayName from "./weekDayName";
 import DayOfTheCurrentMonth from "./dayOfTheCurrentMonth";
 
-export default class LeftSideOfTheCalendar extends Component {
+export default class DayOfTheWeekAndDayOfTheMonth extends Component {
   render() {
     const { fullNameOfTheDayOfTheWeek } = this.props;
     return (
