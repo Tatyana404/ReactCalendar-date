@@ -1,29 +1,21 @@
-import { Component } from 'react'
-import style from './monthAndYearAndCalendar.module.scss'
-import MonthNameAndYear from './monthNameAndYear'
-import DayOfWeek from './dayOfWeek'
-import Month from './month'
+import { Component } from 'react';
+import style from './monthAndYearAndCalendar.module.scss';
+import MonthNameAndYear from './monthNameAndYear';
+import DayOfWeek from './dayOfWeek';
+import Month from './month';
 
 export default class MonthAndYearAndCalendar extends Component {
-  static defaultProps = {
-    date: new Date()
-  }
-  state = {
-    date: this.props.date,
-    currentDate: new Date()
-  }
   get year () {
-    return this.state.date.getFullYear()
+    return this.props.currentDate.getFullYear();
   }
   get month () {
-    return this.state.date.getMonth()
+    return this.props.currentDate.getMonth();
   }
   render () {
-    const { abbreviationNameOfTheDayOfTheWeek } = this.props
-    const { currentDate } = this.state
+    const { abbreviationNameOfTheDayOfTheWeek, currentDate } = this.props;
     return (
       <article className={style.contentCalendar}>
-        <MonthNameAndYear />
+        <MonthNameAndYear currentDate={currentDate} />
         <table className={style.borderSpacing}>
           <thead>
             <DayOfWeek
@@ -35,6 +27,6 @@ export default class MonthAndYearAndCalendar extends Component {
           <Month currentDate={currentDate} />
         </table>
       </article>
-    )
+    );
   }
 }

@@ -1,5 +1,5 @@
-import { Component } from "react";
-import style from "./dayOfTheCurrentMonth.module.scss";
+import { Component } from 'react';
+import style from './dayOfTheCurrentMonth.module.scss';
 
 export default class WeekDayName extends Component {
   static defaultProps = {
@@ -8,10 +8,10 @@ export default class WeekDayName extends Component {
   state = {
     date: this.props.date,
   };
-  get day() {
+  get day () {
     return this.state.date.getDate();
   }
-  render() {
+  render () {
     return <p className={style.dayOfTheMonth}>{this.day}</p>;
   }
 }

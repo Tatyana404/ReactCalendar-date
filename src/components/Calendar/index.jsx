@@ -1,38 +1,20 @@
-import React, { Component } from 'react'
-import style from './calendar.module.scss'
-import DayOfTheWeekAndDayOfTheMonth from './dayOfTheWeekAndDayOfTheMonth'
-import MonthAndYearAndCalendar from './monthAndYearAndCalendar'
+import React, { Component } from 'react';
+import style from './calendar.module.scss';
+import DayOfTheWeekAndDayOfTheMonth from './dayOfTheWeekAndDayOfTheMonth';
+import MonthAndYearAndCalendar from './monthAndYearAndCalendar';
+import { calendarDays } from '../../constans';
+
+const {
+  abbreviationNameOfTheDayOfTheWeek,
+  fullNameOfTheDayOfTheWeek,
+} = calendarDays;
 
 export default class Calendar extends Component {
-  static defaultProps = {
-    abbreviationNameOfTheDayOfTheWeek: [
-      'Пн',
-      'Вт',
-      'Ср',
-      'Чт',
-      'Пт',
-      'Сб',
-      'Вс'
-    ],
-    fullNameOfTheDayOfTheWeek: [
-      'Воскресенье',
-      'Понедельник',
-      'Вторник',
-      'Среда',
-      'Четверг',
-      'Пятница',
-      'Суббота'
-    ]
-  }
   state = {
-    currentDate: new Date()
-  }
+    currentDate: new Date(),
+  };
   render () {
-    const {
-      abbreviationNameOfTheDayOfTheWeek,
-      fullNameOfTheDayOfTheWeek
-    } = this.props
-    const { currentDate } = this.state
+    const { currentDate } = this.state;
     return (
       <section className={style.calendar}>
         <DayOfTheWeekAndDayOfTheMonth
@@ -43,6 +25,6 @@ export default class Calendar extends Component {
           currentDate={currentDate}
         />
       </section>
-    )
+    );
   }
 }

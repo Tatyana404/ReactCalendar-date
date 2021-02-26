@@ -1,5 +1,7 @@
 const DAYS_IN_WEEK = 7;
+
 const DAYS_IN_MONTH = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
 const Month = {
   Январь: 0,
   Февраль: 1,
@@ -15,7 +17,7 @@ const Month = {
   Декабрь: 11,
 };
 
-export function areEqual(a, b) {
+export function areEqual (a, b) {
   if (!a || !b) return false;
   return (
     a.getFullYear() === b.getFullYear() &&
@@ -24,11 +26,11 @@ export function areEqual(a, b) {
   );
 }
 
-export function isLeapYear(year) {
+export function isLeapYear (year) {
   return !(year % 4 || (!(year % 100) && year % 400));
 }
 
-export function getDaysInMonth(date) {
+export function getDaysInMonth (date) {
   if (isLeapYear(date.getFullYear()) && date.getMonth() === Month.Февраль) {
     return DAYS_IN_MONTH[date.getMonth()] + 1;
   } else {
@@ -36,12 +38,12 @@ export function getDaysInMonth(date) {
   }
 }
 
-export function getDayOfWeek(date) {
+export function getDayOfWeek (date) {
   if (date.getDay() === 0) return 6;
   return date.getDay() - 1;
 }
 
-export function getMonthData(year, month) {
+export function getMonthData (year, month) {
   const result = [];
   const date = new Date(year, month);
   const daysInMonth = getDaysInMonth(date);
