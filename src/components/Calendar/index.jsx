@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import style from './calendar.module.scss';
 import DayOfTheWeekAndDayOfTheMonth from './dayOfTheWeekAndDayOfTheMonth';
 import MonthAndYearAndCalendar from './monthAndYearAndCalendar';
-import { calendarDays } from '../../constans';
+import { calendarDays } from '../../configs';
 
 const {
   abbreviationNameOfTheDayOfTheWeek,
