@@ -53,7 +53,7 @@ export function getMonthData (year, month) {
     result[i] = [];
     for (let j = 0; j < DAYS_IN_WEEK; j++) {
       if ((i === 0 && j < monthStartsOn) || day > daysInMonth) {
-        result[i][j] = undefined;
+        result[i][j] = new Date(year, month, day++);
       } else {
         result[i][j] = new Date(year, month, day++);
       }
